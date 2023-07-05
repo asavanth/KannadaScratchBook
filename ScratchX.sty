@@ -66,6 +66,40 @@
 \node[circle,outer color=#1!60, inner color=white, minimum width=1.4mm, inner sep=0] at (2.1mm,3.9mm) {};
 \end{tikzpicture}
 }
+% taken from manual
+\makeatletter
+\pgfdeclareshape{document}{
+\inheritsavedanchors[from=rectangle] % this is nearly a rectangle
+\inheritanchorborder[from=rectangle]
+\inheritanchor[from=rectangle]{center}
+\inheritanchor[from=rectangle]{north}
+\inheritanchor[from=rectangle]{south}
+\inheritanchor[from=rectangle]{west}
+\inheritanchor[from=rectangle]{east}
+% ... and possibly more
+\backgroundpath{% this is new
+% store lower right in xa/ya and upper right in xb/yb
+\southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+\northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+% compute corner of ‘‘flipped page’’
+\pgf@xc=\pgf@xb \advance\pgf@xc by-10pt % this should be a parameter
+\pgf@yc=\pgf@yb \advance\pgf@yc by-10pt
+% construct main path
+\pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+\pgfpathlineto{\pgfpoint{\pgf@xa}{\pgf@yb}}
+\pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yb}}
+\pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yc}}
+\pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@ya}}
+\pgfpathclose
+% add little corner
+\pgfpathmoveto{\pgfpoint{\pgf@xc}{\pgf@yb}}
+\pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yc}}
+\pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yc}}
+\pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yc}}
+}
+}
+\makeatother
+
 %-------------------------------------------------------- BEGIN BOX ----------------------------------------------------------------------%
 \newcommand{\beginbox}[1]{%avec ou sans drapeau (hauteur de la boîte)
 \ifthenelse{\equal{#1}{}}
@@ -173,7 +207,7 @@
 	\fi
 	\FPeval{b}{neg 0.1+(Y)}\FPeval{C}{0.36+(Y)}\FPeval{d}{0.1+X}\FPeval{e}{0.46+(Y)}\FPeval{f}{0.4+X}\FPeval{g}{0.5+X}\FPeval{h}{0.7+X}\FPeval{i}{0.8+X}\FPeval{l}{neg 0.2+(Y)}\FPeval{m}{neg 0.3+(Y)}\FPeval{o}{0.1+(Y)}\FPeval{nn}{2+X}\FPeval{oo}{neg 0.1+(Y)}\FPeval{NN}{1.3+X}\FPeval{OO}{0.2+(Y)}\FPeval{NNN}{2.1+X}\FPeval{OOO}{0.2+(Y)}\FPeval{NNNN}{2.2+X}\FPeval{OOOO}{0.05+(Y)}\FPeval{nnn}{1.9+X}\FPeval{ooo}{0.25+(Y)}\FPeval{nnnn}{1.75+X}\FPeval{oooo}{0.05+(Y)}\FPeval{YY}{0.375+Y}\FPeval{YYY}{neg 0.065+Y}
 	\draw [black,fill=motion](\X,\b)--(\X,\C)--(\d,\e)--(\f,\e)--(\g,\C)--(\h,\C)--(\i,\e)--(\j,\e)--(\k,\C)--(\k,\b)--(\j,\l)--(\i,\l)--(\h,\m)--(\g,\m)--(\f,\l)--(\d,\l)--cycle;%the box
-	\draw(\X,\o)node[right, align=left]{\color{white}\text{\cb[w]{#2}\phantom{dgh}\,#3}};
+	\draw(\X,\o)node[right, align=left]{\color{white}\text{\cb[w]{#2}\phantom{dghh}\,#3}};
 		\ifthenelse{\equal{#1}{g}\or\equal{#1}{G}\or\equal{#1}{gauche}}
 		{\draw[white,fill=white](\NN,\oo)arc(-60:140:0.2)--($(\NN-0.3,\oo+0.33)$)--($(\NN-0.32,\oo+0.16)$)--($(\NN-0.182,\oo+0.258)$)--($(\NN-0.23,\oo+0.2875)$)arc(140:-58:0.17)--cycle;}%curved left arrow
 		{\draw[white,fill=white](\NN,\OO)arc(39:240:0.2)--($(\NN-0.24,\OO-0.275)$)arc(240:41:0.17)--($(\NN-0.066,\OO-0.0365)$)--($(\NN+0.05,\OO-0.12)$)--($(\NN+0.04,\OO+0.021)$)--cycle;}%curved right arrow
