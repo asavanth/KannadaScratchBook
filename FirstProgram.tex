@@ -168,55 +168,90 @@
 \end{multicols}
 \end{center}
 \caption{ಸ್ಪ್ರಯ್ಟ್ ಆನು ಹಂತ ಹಂತವಾಗಿ ಕಾಯ್ದಿರಿಸಿ ಪ್ರೊಗ್ರಾಮ್ಮನ್ನು ವಿಶ್ಲೇಷಿಸುವುದು}
-\label{program3}
+\label{program4}
 \end{figure}
 
+ಇದಕ್ಕೆ "ಹಿಡಿತ" ಗುಂಪಿನ "1 ಸೆಕೆಂಡುಗಳಷ್ಟು   ಕಾಯಬೇಕು" ಎನ್ನುವ ಆಜ್ಞೆಯನ್ನು ಬಳಸಬೇಕು.  ಈ ಆಜ್ಞೆಯನ್ನು ಬಳಸಿ ಚಿತ್ರ \ref{program4}ರ ಎಡಭಾಗದಲ್ಲಿ ತೋರಿಸಿರುವಂತೆ ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ತಯಾರಿಸಿ.  ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಹೇಳುವುದಾದರೆ, ಚಿತ್ರ \ref{program3}ರ ಪ್ರೋಗ್ರಾಮಿಗೆ ಒಂದೊಂದು ಹಂತದ ಮಧ್ಯೆಯೂ 1 ಸೆಕೆಂಡುಗಳಷ್ಟು   ಕಾಯುವ ಆಜ್ಞೆಯನ್ನು ಬಳಸಬೇಕು.  ಪ್ರೋಗ್ರಾಂ ಅನ್ನು  ಚಲಾಯಿಸಿ (ವೇದಿಕೆಯ ಮೇಲಿನ ಹಸಿರು ಧ್ವಜವನ್ನು ಒತ್ತಿ),  ಸ್ಪ್ರಯ್ಟ್ ಮುಂದೆ ಹೋಗಿ, 1 ಸೆಕೆಂಡುಗಳಷ್ಟು ಕಾದು ಬಲಕ್ಕೆ ತಿರುವುದನ್ನು ನಾಲ್ಕು ಬಾರಿ ಮಾಡುವುದೇ ಎಂದು ಪರಿಶೀಲಿಸಿ.  ಇದೇ ರೀತಿ ಕಂಪ್ಯೂಟರ್, ನಮ್ಮ ಆಜ್ಞೆಗಳನ್ನು ಅತಿವೇಗವಾಗಿ ನಿರ್ವಹಿಸುವಾಗ, ಪ್ರೊಗ್ರಾಮ್ಮನ್ನು ವಿಶ್ಲೇಷಿಸಬೇಕಾದರೆ,  ನಮಗೆ ಬೇಕಾದ ಹಂತಗಳಲ್ಲಿ ತಡೆದು ಕಾಯಿಸಬೇಕು.
+
+ಚಿತ್ರ \ref{program3}ನ ಬಲಭಾಗದಲ್ಲಿರುವಂತೆ  ಈ ಪ್ರೊಗ್ರಾಂ ಆನ್ನು ಪುಸ್ತಕದಲ್ಲಿ  ಸರಳವಾಗಿ ಬರೆದುಕೊಳ್ಳಬಹುದು.   ಈಗ ಗಮನಿಸಿ, ಸ್ಪ್ರಯ್ಟ್  ತಾನು ಮೊದಲಿದ್ದ ದಿಕ್ಕಿನಲ್ಲಿಯೇ ಮುಖ ಮಾಡಿ ನಿಂತಿದೆ. 
 
 \section{ಅಭ್ಯಾಸ }
+\begin{enumerate}
+\item{ಸ್ಪ್ರಯ್ಟ್ 200 ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗುವಾಗ ಮಧ್ಯದಲ್ಲಿ ಒಮ್ಮೆ ಹಿಂದಕ್ಕೆ ತಿರುಗಿ ನೋಡಿ ಹೋಗುವಂತೆ ಪ್ರೊಗ್ರಾಂ ಬರೆಯಿರಿ. ಮೊದಲು ಪುಸ್ತಕದಲ್ಲಿ ಪ್ರಯತ್ನಿಸಿ ನಂತರ ಸ್ಕ್ರಾಚ್ನಲ್ಲಿ ಮಾಡಿ ನೋಡಿ. }
 
+
+\begin{figure}[h]
 \begin{center}
-\begin{figure}
-\begin{multicols}{2}
-\begin{Scratch}[1]
-\scbox{\cb[w]{10}  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು}{motion}
-\scbox{\cb[w]{20}  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು}{motion}
-\end{Scratch}
+\begin{tikzpicture}
+\node at (0,0)[rotate=0, opacity=0.2](s1){\Scratchy[0.2]};
+\draw[->](s1.east)--++(2cm,0)node(newcoord){};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=-180, opacity=0.4](s2){\Scratchy[0.2]};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=0, opacity=0.6](s3){\Scratchy[0.2]};
+\draw[->](s3.east)--++(2cm,0cm)node(newcoord){};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=0, opacity=1](s4){\Scratchy[0.2]};
+\draw [->](s2.south)arc(80:-90:1.3cm);
+\end{tikzpicture}
+\end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ ಹಿಂದಿರುಗಿ ನೋಡಿ ಮುಂದೆ ಹೋಗುವುದು}
+\label{program5}
+\end{figure}
 
+\item{ಸ್ಪ್ರಯ್ಟ್ 200 ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗುವಾಗ ಮಧ್ಯದಲ್ಲಿ ಒಮ್ಮೆ ಕೆಳಕ್ಕೆ ನೋಡಿ ಹೋಗುವಂತೆ ಪ್ರೊಗ್ರಾಂ ಬರೆಯಿರಿ.  ಮೊದಲು ಪುಸ್ತಕದಲ್ಲಿ ಪ್ರಯತ್ನಿಸಿ ನಂತರ ಸ್ಕ್ರಾಚ್ನಲ್ಲಿ ಮಾಡಿ ನೋಡಿ. }
+
+
+\begin{figure}[h]
+\begin{center}
 
 \begin{tikzpicture}
-\node[doc] (x) (inst1){
-10  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು\\
-20  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು
-};
+\node at (0,0)[rotate=0, opacity=0.2](s1){\Scratchy[0.2]};
+\draw[->](s1.east)--++(2cm,0)node(newcoord){};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=-90, opacity=0.4](s2){\Scratchy[0.2]};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=0, opacity=0.6](s3){\Scratchy[0.2]};
+\draw[->](s3.east)--++(2cm,0cm)node(newcoord){};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=0, opacity=1](s4){\Scratchy[0.2]};
+\draw [->](s2.west)arc(80:0:1.5cm);
 \end{tikzpicture}
-\end{multicols}
-
-\caption{}
-\label{writing}
-\end{figure}
 \end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ ಕೆಳಗೆ ನೋಡಿ ಮುಂದೆ ಹೋಗುವುದು}
+\label{program6}
+\end{figure}
+
+\item{ಸ್ಪ್ರಯ್ಟ್ 300 ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗುವಾಗ ಮಧ್ಯದಲ್ಲಿ ಒಮ್ಮೆ ಪಲ್ಟಿ  ಹೊಡೆಯುವಂತೆ ಪ್ರೊಗ್ರಾಂ ಬರೆಯಿರಿ. }
 
 
+\begin{figure}[h]
 \begin{center}
-\begin{figure}
-\begin{multicols}{2}
-\begin{Scratch}[1]
-\boucle{\cb[w]{4} ಮರುಕಳಿಸು}{1}{1}
-\scbox{\cb[w]{20}  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು}{motion}
-\scbox{\cb[w]{50}  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು}{motion}
-\end{Scratch}
-
-
 \begin{tikzpicture}
-\node[doc] (x) (inst1){
-4 ಮರುಕಳಿಸು\\
-\hspace{0.6cm}20  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು\\
-50  ಹೆಜ್ಜೆ ಮುಂದೆ ಹೋಗು
-};
+\node at (0,0)[rotate=0, opacity=0.2](s1){\Scratchy[0.2]};
+\draw[->](s1.east)--++(2cm,0)node(newcoord){};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=-180, opacity=0.4](s2){\Scratchy[0.2]};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=0, opacity=0.6](s3){\Scratchy[0.2]};
+\draw[->](s3.east)--++(2cm,0cm)node(newcoord){};
+\node at ([shift={(1cm,0)}]newcoord)[rotate=0, opacity=1](s4){\Scratchy[0.2]};
+\draw [->](s2.south)arc(80:-260:1.3cm);
 \end{tikzpicture}
-\end{multicols}
-
-\caption{}
-\label{writing}
-\end{figure}
 \end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ ಅನ್ನು ಪಲ್ಟಿ  ಹೊಡೆಯಿಸುವುದು}
+\label{program7}
+\end{figure}
+
+\item{ಸ್ಪ್ರಯ್ಟ್ ತ್ರಿಕೋನಾಕಾರವಾಗಿ  ಹೋಗುವಂತೆ ಪ್ರೊಗ್ರಾಂ ಬರೆಯಿರಿ. }
+
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+\node at (0,0)[rotate=0, opacity=0.2](s1){\Scratchy[0.2]};
+\draw[->](s1.east)--++(2cm,2cm)node(newcoord){};
+\node at ([shift={(1cm,1cm)}]newcoord)[rotate=0, opacity=0.4](s2){\Scratchy[0.2]};
+\draw[->](s2.east)--++(2cm,-2cm)node(newcoord){};
+\node at ([shift={(1cm,-1cm)}]newcoord)[rotate=0, opacity=1](s4){\Scratchy[0.2]};
+\end{tikzpicture}
+\end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ ಅನ್ನು ತ್ರಿಕೋನಾಕಾರವಾಗಿ ಹೋಗಿಸುವುದು}
+\label{program8}
+\end{figure}
+
+\end{enumerate}
+
+ನೆನಪಿರಲಿ, ಈ ಎಲ್ಲ ಅಭ್ಯಾಸ ಪ್ರೊಗ್ರಾಂಗಳಲ್ಲಿ, ಸ್ಪ್ರಯ್ಟ್ ಎಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳಬೇಕು ಎಂದು ಯೋಚಿಸಿ, ಅದಕ್ಕೆ ತಕ್ಕಂತೆ ಪ್ರೊಗ್ರಾಂ ಕಾಯಿಸಬೇಕು.
