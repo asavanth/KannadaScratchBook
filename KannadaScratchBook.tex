@@ -1,5 +1,7 @@
-\documentclass[16pt]{book}
-\usepackage[a4paper]{geometry}
+\documentclass[14pt]{book}
+\usepackage[a4paper,
+left=20mm,
+top=25mm]{geometry}
 \usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{polyglossia}
@@ -8,6 +10,7 @@
 \setotherlanguages{english}
 
 \usepackage{xcolor}
+\usepackage{emptypage}
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{lastpage}
@@ -15,7 +18,7 @@
 \usepackage[nomessages]{fp}
 \usepackage{calc}
 \usepackage{xstring}
-\usepackage[alpine]{ifsym}%pour avoir VarFlag comme
+\usepackage[alpine]{ifsym}
 \usepackage{ifthen}
 \usepackage{multido}
 \usepackage{xargs}
@@ -25,12 +28,12 @@
 \usepackage{amsfonts,amsmath,amssymb,mathrsfs,amsthm}
 \usepackage{lmodern}
 \usepackage{multicol}
-\usepackage[font={color=gray}]{caption}
+\usepackage[font={color=gray},skip=1pt, size=large]{caption}
 \usepackage{ScratchX}
 
-\linespread{1.8}
+\linespread{1.7}
 \begin{document}
-
+\fontsize{13pt}{17pt}\selectfont
 \input{Titlepage}
 \input{Foreword}
 \input{Acknowledgement}
@@ -49,6 +52,7 @@ minimum width=\linewidth*0.95,
 shape=document,
 inner sep=2pt,
 text=blue,
+font=\large,
 execute at begin node=\setlength{\baselineskip}{19pt},
 blur shadow={shadow blur steps=5},
 ]
@@ -57,7 +61,7 @@ blur shadow={shadow blur steps=5},
 \input{Mouse}
 \input{FirstProgram}
 \input{Pen}
-%\input{Headers}
+\input{Headers}
 %\input{Visibility}
 %\input{Loops}
 %
