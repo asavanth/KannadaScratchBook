@@ -1,1 +1,1 @@
-rm -f *.aux *.log *.gz
+rm -f *.aux *.log *.gz *.lof *.toc
