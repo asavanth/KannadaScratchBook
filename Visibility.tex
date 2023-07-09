@@ -1,12 +1,80 @@
-\chapter{ಕಾಣುವುದು}
+\chapter{ಧ್ವನಿ-ದೃಶ್ಯ}
+
+\section{ಧ್ವನಿ }
+
+\begin{figure}[h]
+\begin{center}
+\begin{multicols}{3}
+\begin{Scratch}[1]
+\scbox{\rb{ಮಿಯವ್} ಶಬ್ಧ ಕೇಳಿಸು}{sound}
+\end{Scratch}
+\begin{Scratch}[1]
+\scbox{\cb[w]{60 \scriptsize$\blacktriangledown$} ಲಯದಲ್ಲಿ  \cb[w]{1}   ಸಂಗೀತದ ಸ್ವರ ಕೇಳಿಸು}{sound}
+\end{Scratch}
+\begin{Scratch}[1]
+\scbox{\cb[w]{1 \scriptsize$\blacktriangledown$} ಗೆ  ವಾದ್ಯವನ್ನು ಹೊಂದಿಸು}{sound}
+\end{Scratch}
+
+\end{multicols}
+\end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ನಿಂದ ಹೇಳಿಸುವುದು}
+\label{vis_sound}
+\end{figure}
 
 \section{ಹೆಲೊ ಎಂದು ಹೇಳು }
+\begin{figure}[h]
+\begin{center}
+\begin{multicols}{2}
+\begin{Scratch}[1]
+\beginbox{}
+\scbox{\rb[w]{ಹೆಲೋ} ಎಂದು ಹೇಳು}{looks}
+\end{Scratch}
 
-\section{ಶಬ್ದ }
-\SampleProgram
+\begin{Scratch}[1]
+\beginbox{}
+\scbox{\rb[w]{ಹೆಲೋ} ಎಂದು \cb[w]{2}  ಸೆಕೆಂಡಿನಲ್ಲಿ ಹೇಳು}{looks}
+\end{Scratch}
+
+\end{multicols}
+
+\begin{tikzpicture}
+\node at (0,0) [rectangle callout,rounded corners, draw=gray!60,  line width=3pt,  anchor=south west, callout relative pointer={(-0.5cm, -0.5cm)}](tell){\Large{ಹೆಲೋ}}; 
+\node at ([shift={(0.8cm,0.2cm)}]tell.pointer)[anchor=north east, rotate=0, opacity=1](s1){\Scratchy[0.2]};
+\end{tikzpicture}
+\end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ನಿಂದ ಹೇಳಿಸುವುದು}
+\label{vis_hello}
+\end{figure}
 
 \section{ತೋರಿಸು, ಬಚ್ಚಿಡು}
+\begin{figure}[h]
+\begin{center}
+\begin{multicols}{2}
+\begin{Scratch}[1]
+\scbox{ಬಚ್ಚಿಡು}{looks}
+\end{Scratch}
+\begin{Scratch}[1]
+\scbox{ತೋರಿಸು}{looks}
+\end{Scratch}
+
+\end{multicols}
+\end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ಅನ್ನು ಕಣ್ಮರೆ ಮಾಡುವುದು}
+\label{vis_hide}
+\end{figure}
+
 
 \section{ಉಡುಪು ಬದಲಾಯಿಸು}
 
+\begin{figure}[h]
+\begin{center}
+\begin{Scratch}[1]
+\scbox{\rb{ಉಡುಪು1} ಗೆ ಉಡುಪನ್ನು ಬದಲಾಯಿಸು}{sound}
+\end{Scratch}
+\end{center}
+\caption{ಸ್ಪ್ರಯ್ಟ್ ಉಡುಪನ್ನು ಬದಲಾಯಿಸುವುದು}
+\label{vis_looks}
+\end{figure}
+
 \section{ಅಭ್ಯಾಸ }
+
